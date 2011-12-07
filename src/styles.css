@@ -1,0 +1,74 @@
+#gritter-notice-wrapper {
+  top: 50px !important;
+}
+
+body {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+section {
+  padding-top: 60px;
+}
+
+section .page-header h1 {
+  padding-left: 60px;
+}
+
+nav {
+  margin: auto;
+}
+
+q {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 0;
+}
+
+q:before, q:after {
+  content: '"';
+}
+
+.hero-unit h1 {
+  font-size: 45px;
+}
+
+.hero-unit + section {
+  padding-top: 0;
+}
+
+.hero-unit li {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 27px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #404040;
+}
+
+.crud .btn{
+  width: 100px;
+  height: 100px;
+  font-size: 1.7em;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.announce .btn {
+  float: right;
+  margin-top: 10px;
+}
+
+.announce textarea {
+  height: 100px;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.nav-actions iframe {
+  width: 100%;
+}
+
+.crud-actions span:first-letter {
+  font-weight: bold;
+}
