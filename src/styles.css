@@ -30,6 +30,10 @@ q:before, q:after {
   content: '"';
 }
 
+.hero-unit {
+  padding-bottom: 30px;
+}
+
 .hero-unit h1 {
   font-size: 45px;
 }
@@ -44,6 +48,10 @@ q:before, q:after {
   line-height: 27px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #404040;
+}
+
+.hero-unit p:last-child {
+  margin: 0;
 }
 
 .crud .btn{

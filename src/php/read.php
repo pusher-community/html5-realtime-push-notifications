@@ -7,7 +7,6 @@ $pusher = new Pusher(APP_KEY, APP_SECRET, APP_ID);
 $helper = new PusherNotificationHelper($pusher);
 $helper->read_notification('A widget is being read');
 ?>
-<link href="../styles.css" rel="stylesheet" />
 
 Read!
 
