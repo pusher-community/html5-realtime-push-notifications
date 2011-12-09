@@ -1,6 +1,6 @@
 <?php
-require_once('config.php');
 require_once('../lib/squeeks-Pusher-PHP/lib/Pusher.php');
+require_once('config.php');
 
 $pusher = new Pusher(APP_KEY, APP_SECRET, APP_ID);
 
