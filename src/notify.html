@@ -18,29 +18,38 @@
     <script src="http://js.pusherapp.com/1.9/pusher.min.js"></script>
     
     <script>
-      $(function() {    
-        $(".announce button").click(handleAnnounceButtonClick);
+      $(function() {
+        $("a[href='#notify']").click(function() {
+          $.ajax({
+            url: "php/notify.php",
+            data: {"message": "I'm a notification!"}
+          });
+        });
+          
+        $(".notify button").click(handleNotifyButtonClick);
         
         var pusher = new Pusher('49e26cb8e9dde3dfc009');
-        var channel = pusher.subscribe('notify');
-        channel.bind('announce', handleAnnounce);
+        var channel = pusher.subscribe('my_notifications');
+        var notifier = new PusherNotifier(channel);
       });
       
-      function handleAnnounceButtonClick() {
-        var message = $.trim($("#announceMsg").val());
+      function handleNotifyButtonClick() {
+        var message = $.trim($("#notifyMessage").val());
         if(message) {
-          var request = $.ajax({
-            url: "php/announce.php",
+          $.ajax({
+            url: "php/notify.php",
             data: {"message": message}
           });
         }
       }
 
-      function handleAnnounce(data) {
-        $.gritter.add({
-          title: 'Announcement',
-          text: data.message.replace(/\\/g, ''),
-          image: 'images/announce.png'
+      function PusherNotifier(channel) {
+        channel.bind('notification', function(data) {
+          $.gritter.add({
+           title: 'Notification',
+           text: data.message.replace(/\\/g, ''),
+           image: 'images/notify.png'
+          });
         });
       }
     </script>
@@ -48,20 +57,36 @@
   <body>
 
     <div class="container">
+
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <a class="brand" href="/">PHP HTML5 Push Notifications using Pusher</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-unit">
+        <h1>PHP HTML5 Push Notifications</h1>
+        <p>This page demonstrates HTML5 Realtime Push Notifications using <a href="http://pusher.com">Pusher</a>. This functionality can easily be added to any PHP application.</p>
+        <p>The demo below <a href="#notify">Triggers a notification</a> using the <a href="https://github.com/squeeks/Pusher-PHP">PHP Pusher library</a> and displays it using the <a href="https://github.com/jboesch/Gritter">jQuery Gritter notification plugin</a>, which are included within the source.</p>
+        <p><a href="https://github.com/pusher/html5-realtime-push-notifications" class="btn primary large" target="_blank">Get the code &raquo;</a></p>
+        <p><small>We plan to update this sample to contain backend code in other technologies. Feel free to <a href="https://github.com/pusher/html5-realtime-push-notifications">fork</a> and try it for yourself.</small></p>
+      </div>
       
-      <section class="announce" id="announce">
+      <section class="notify">
         
         <div class="page-header">
-          <h1>Announcements <small>Trigger an announcement notification</small></h1>
+          <h1>Notify <small>Trigger a notification</small></h1>
         </div>
         
         <div class="row show-grid">
           <div class="span4 offset1">
-            <p>Just enter some text into the <code>textarea</code> and click the announce <code>button</code> to trigger an announcement containing the text you've entered.</p>
+            <p>Just enter some text into the <code>textarea</code> and click the 'Notify' <code>button</code> to trigger a notification containing the text you've entered.</p>
           </div>
           <div class="span4 offset1">
-            <textarea id="announceMsg"></textarea><br />
-            <button class="btn info">Announce</button>
+            <textarea id="notifyMessage">HTML5 Realtime Push Notification</textarea><br />
+            <button class="btn info">Notify</button>
           </div>
         </div>
         
