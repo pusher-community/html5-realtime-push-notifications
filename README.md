@@ -2,8 +2,6 @@
 
 The first version of this sample shows how to perform Realtime Push Notifications from PHP. Later versions will demonstrate how to achieve this using other backend technologies.
 
-The first version of this sample shows how to perform Realtime Push Notifications from PHP. Later version will demonstrate how to achieve this using other backend technologies.
-
 ## Demo
 
 http://html5-realtime-push-notifications.phpfogapp.com/
