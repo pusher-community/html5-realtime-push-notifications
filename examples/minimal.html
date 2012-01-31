@@ -5,20 +5,15 @@
     <title>Minimal HTML5 Realtime Push Notification Example</title>
     
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="js/gritter/js/jquery.gritter.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="js/gritter/css/jquery.gritter.css" />
+    <script src="../src/lib/gritter/js/jquery.gritter.min.js"></script>
+    <script src="../src/PusherNotifier.js"></script>
+    <link rel="stylesheet" type="text/css" href="../src/lib/gritter/css/jquery.gritter.css" />
     
-    <script src="http://js.pusherapp.com/1.9/pusher.min.js"></script>
+    <script src="http://js.pusher.com/1.11/pusher.min.js"></script>
     <script>
       var pusher = new Pusher('49e26cb8e9dde3dfc009');
       var channel = pusher.subscribe('my_notifications');
-      channel.bind('notification', function(data) {
-        $.gritter.add({
-         title: 'Notification',
-         text: data.message.replace(/\\/g, ''),
-         image: 'images/notify.png'
-        });
-      });
+      var notifier = new PusherNotifier(channel);
     </script>
   </head>
   <body>

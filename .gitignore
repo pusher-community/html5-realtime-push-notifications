@@ -1,2 +1,2 @@
 *.DS_Store
-src/php/config.php
+examples/php/config.php
