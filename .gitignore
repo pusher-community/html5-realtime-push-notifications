@@ -1,2 +1,3 @@
 *.DS_Store
 examples/php/config.php
+examples/ruby-sinatra/config.rb
