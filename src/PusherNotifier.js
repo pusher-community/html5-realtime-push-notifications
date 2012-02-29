@@ -4,6 +4,7 @@ function PusherNotifier(channel, options) {
   this.settings = {
     eventName: 'notifications',
     title: 'Notification',
+    titleEventProperty: null, // if set the 'title' will not be used and the title will be taken from the event
     image: 'images/notify.png',
     eventTextProperty: 'message',
     gritterOptions: {}
@@ -16,7 +17,7 @@ function PusherNotifier(channel, options) {
 };
 PusherNotifier.prototype._handleNotification = function(data) {
   var gritterOptions = {
-   title: this.settings.title,
+   title: (this.settings.titleEventProperty? data[this.settings.titleEventProperty] : this.settings.title),
    text: data[this.settings.eventTextProperty].replace(/\\/g, ''),
    image: this.settings.image
   };
