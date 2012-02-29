@@ -4,7 +4,8 @@ function PusherNotifier(channel, options) {
   this.settings = {
     eventName: 'notifications',
     title: 'Notification',
-    image: 'images/notify.png'
+    image: 'images/notify.png',
+    eventTextProperty: 'message'
   };
   
   $.extend(this.settings, options);
@@ -15,7 +16,7 @@ function PusherNotifier(channel, options) {
 PusherNotifier.prototype._handleNotification = function(data) {
   $.gritter.add({
    title: this.settings.title,
-   text: data.message.replace(/\\/g, ''),
+   text: data[this.settings.eventTextProperty].replace(/\\/g, ''),
    image: this.settings.image
   });
 };
