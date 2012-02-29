@@ -5,7 +5,8 @@ function PusherNotifier(channel, options) {
     eventName: 'notifications',
     title: 'Notification',
     image: 'images/notify.png',
-    eventTextProperty: 'message'
+    eventTextProperty: 'message',
+    gritterOptions: {}
   };
   
   $.extend(this.settings, options);
@@ -14,9 +15,13 @@ function PusherNotifier(channel, options) {
   channel.bind(this.settings.eventName, function(data){ self._handleNotification(data); });
 };
 PusherNotifier.prototype._handleNotification = function(data) {
-  $.gritter.add({
+  var gritterOptions = {
    title: this.settings.title,
    text: data[this.settings.eventTextProperty].replace(/\\/g, ''),
    image: this.settings.image
-  });
+  };
+  
+  $.extend(gritterOptions, this.settings.gritterOptions);
+  
+  $.gritter.add(gritterOptions);
 };
