@@ -2,7 +2,7 @@ function PusherNotifier(channel, options) {
   options = options || {};
   
   this.settings = {
-    eventName: 'notifications',
+    eventName: 'notification',
     title: 'Notification',
     titleEventProperty: null, // if set the 'title' will not be used and the title will be taken from the event
     image: 'images/notify.png',
