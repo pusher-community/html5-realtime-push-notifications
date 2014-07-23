@@ -1,8 +1,8 @@
 <?php
 
-	require_once('../lib/Pusher.php');
+	require_once( dirname(__FILE__) . '/../test_includes.php' );
 	
-	class PusherPushTest extends PHPUnit_Framework_TestCase
+	class PusherSocketAuthTest extends PHPUnit_Framework_TestCase
 	{
 
 		protected function setUp()
