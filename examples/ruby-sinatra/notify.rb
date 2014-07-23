@@ -1,4 +1,4 @@
-require 'config.rb'
+require './config.rb'
 
 require 'sinatra'
 require 'pusher'
