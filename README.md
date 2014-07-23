@@ -13,10 +13,10 @@ It's as easy as:
 1. Include the PusherNotifier.js libraries and the jQuery Gritter files:
 
          <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-         <script src="html5-realtime-push-notifications/src/js/gritter/js/jquery.gritter.min.js"></script>
-         <link href="html5-realtime-push-notifications/src/js/gritter/css/jquery.gritter.css"rel="stylesheet" type="text/css" />
-         <script src="http://js.pusher.com/1.11/pusher.min.js"></script>
-         <script src="html5-realtime-push-notifications/src/js/PusherNotifier.js"></script>
+         <script src="html5-realtime-push-notifications/lib/gritter/js/jquery.gritter.min.js"></script>
+         <link href="html5-realtime-push-notifications/lib/gritter/css/jquery.gritter.css"rel="stylesheet" type="text/css" />
+         <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+         <script src="html5-realtime-push-notifications/PusherNotifier.js"></script>
        
 2. Create a `PusherNotifier` instance:
 
