@@ -8,19 +8,19 @@
     <script src="lib/less/less-1.1.5.min.js"></script>
     
     <link href="styles.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="../src/lib/gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" type="text/css" href="lib/gritter/css/jquery.gritter.css" />
     
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-    <script src="../src/lib/gritter/js/jquery.gritter.min.js"></script>
+    <script src="lib/gritter/js/jquery.gritter.min.js"></script>
     <script src="http://js.pusher.com/1.12/pusher.min.js"></script>
-    <script src="../src/PusherNotifier.js"></script>
+    <script src="PusherNotifier.js"></script>
     
     <script>
       var NOTIFY_ENDPOINT = "php/notify.php";
-      //var NOTIFY_ENDPOINT = '/notify'; // ruby-sinatra
+      // var NOTIFY_ENDPOINT = '/notify'; // ruby-sinatra & node.js
     
       $(function() {
         $("a[href='#notify']").click(function() {

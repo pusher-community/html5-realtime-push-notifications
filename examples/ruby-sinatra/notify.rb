@@ -35,23 +35,6 @@ get '/notify' do
   body result.to_json
 end
 
-get '/src/*' do
-  path = params[:splat].join()
-  path = path.gsub(/(\.\.)|~/, '') # remove ../ and ~
-  path = '../../src/' + path
-  type = path[path.rindex('.')+1, path.length]
-  puts('getting: ' + path + ' type: ' + type)
-  if(File.exists?(path))
-    status 200
-    headers \
-      'Cache-Control' =>  'no-cache, must-revalidate',
-      'Content-Type' =>  get_content_type(type)
-    File.read(path)
-  else
-    status 404
-  end
-end
-
 def get_content_type(type)
   case type
   when "css"
