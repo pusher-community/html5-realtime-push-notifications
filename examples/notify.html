@@ -32,7 +32,7 @@
           
         $(".notify button").click(handleNotifyButtonClick);
         
-        var pusher = new Pusher('49e26cb8e9dde3dfc009');
+        var pusher = new Pusher('PUSHER_APP_KEY');
         var channel = pusher.subscribe('my_notifications');
         var notifier = new PusherNotifier(channel);
       });
