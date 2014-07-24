@@ -55,7 +55,7 @@ http://pusher.com/tutorials/html5_realtime_push_notifications
 
 ## Demo
 
-http://html5-realtime-push-notifications.phpfogapp.com/
+http://html5-realtime-push-notifications.pusher.io/
 
 ## Examples
 
